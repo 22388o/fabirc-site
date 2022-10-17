@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fabric | the serverless web.</title>
+    <meta name="description" content="Fabric is a new protocol for decentralized applications, built on top of Bitcoin.">
+    <link rel="stylesheet" href="/css/semantic.min.css">
+    <script src="/js/jquery.js"></script>
+    <script src="/js/semantic.min.js"></script>
+    <script src="/js/particles.js"></script>
+    <script src="/js/smooth-scroll.min.js"></script>
+    <style>
+      #graph-as-background .container {
+        position: relative;
+        z-index: 1;
+      }
+      
+      canvas {
+        display: block;
+        vertical-align: bottom;
+        position: absolute;
+        top: 0;
+        z-index: 0;
+      }
+      
+      .masthead .text.container a.primary.button,
+      .masthead .text.container .ui.form {
+        /* margin-top: 2em; */
+        margin-top: 4em;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      
+      .hidden.menu {
+        display: none;
+      }
+      
+      .masthead.segment {
+        min-height: 700px;
+        padding: 1em 0em;
+      }
+      .masthead .logo.item img {
+        margin-right: 1em;
+      }
+      .masthead .ui.menu .ui.button {
+        margin-left: 0.5em;
+      }
+      .masthead h1.ui.header {
+        margin-top: 2em;
+        margin-bottom: 0em;
+        font-size: 4em;
+        font-weight: normal;
+      }
+      .masthead h2 {
+        font-size: 1.7em;
+        font-weight: normal;
+      }
+      
+      .ui.vertical.stripe {
+        padding: 8em 0em;
+      }
+      .ui.vertical.stripe h3 {
+        font-size: 2em;
+      }
+      .ui.vertical.stripe .button + h3,
+      .ui.vertical.stripe p + h3 {
+        margin-top: 3em;
+      }
+      .ui.vertical.stripe .floated.image {
+        clear: both;
+      }
+      .ui.vertical.stripe p {
+        font-size: 1.33em;
+      }
+      .ui.vertical.stripe .horizontal.divider {
+        margin: 3em 0em;
+      }
+      
+      .quote.stripe.segment {
+        padding: 0em;
+      }
+      .quote.stripe.segment .grid .column {
+        padding-top: 5em;
+        padding-bottom: 5em;
+      }
+      
+      .footer.segment {
+        padding: 5em 0em;
+      }
+      
+      .secondary.pointing.menu .toc.item {
+        display: none;
+      }
+      
+      @media only screen and (max-width: 700px) {
+        .ui.fixed.menu {
+          display: none !important;
+        }
+        .secondary.pointing.menu .item,
+        .secondary.pointing.menu .menu {
+          display: none;
+        }
+        .secondary.pointing.menu .toc.item {
+          display: block;
+        }
+        .masthead.segment {
+          min-height: 350px;
+        }
+        .masthead h1.ui.header {
+          font-size: 2em;
+          margin-top: 1.5em;
+        }
+        .masthead h2 {
+          margin-top: 0.5em;
+          font-size: 1.5em;
+        }
+      }
+      
+    </style>
+    <base href="/">
+  </head>
+  <body>
+    <style>
+      .ui.card img {
+        filter: grayscale(1);
+        -webkit-filter: grayscale(1);
+      }
+      
+    </style>
+    <div class="pusher">
+      <div id="graph-as-background" class="ui inverted vertical masthead center aligned segment">
+        <div class="ui container">
+          <div class="ui large secondary inverted pointing menu"><a class="toc item"><i class="sidebar icon"></i></a><a href="/" class="item active">Fabric</a><a href="/#contact" onclick="$('input[name=from]').focus()" class="item">Contact</a>
+          </div>
+        </div>
+        <div class="ui text container">
+          <h1 class="ui inverted header">The Serverless Web.</h1>
+          <h2>Fabric, the simple protocol for distributed applications.</h2>
+          <form action="/subscriptions" method="post" class="ui huge form">
+            <div class="inline fields">
+              <div class="eleven wide field required">
+                <input type="email" name="email" placeholder="you@youremail.com" required>
+              </div>
+              <div class="field">
+                <button title="We promise – no spam, ever.  We'll only ever send you email when it's relevant." class="ui submit huge button primary tooltipped"><i class="newspaper icon"></i>Subscribe &raquo;</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable centered grid container">
+          <div class="row">
+            <div class="eight wide column">
+              <h3 class="ui header">Built on Bitcoin</h3>
+              <p>Fabric is an extension to the Bitcoin protocol, allowing applications to built and deployed <em>today</em>.  Changes to Bitcoin are not necessary.</p>
+              <h3 class="ui header">Proof of Service</h3>
+              <p>Nodes on the Fabric network are rewarded for their efforts, proportional to their contributions, using self-enforcing contracts.</p>
+            </div>
+            <div class="four wide column right aligned"><img src="/img/bitcoin-logo.png" class="ui medium centered image">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable centered grid container">
+          <div class="row">
+            <div class="twelve wide column">
+              <h3 class="ui header">The Team</h3>
+              <p>We're a team of dreamers and builders, and we have a vision for what the web <em>could</em> have been.  We all share in our passion for a truly decentralized web, and plan to use our experiences from our former lives to realize a server-free, censorship-proof future.</p>
+              <h4 style="font-size: 1.5rem;" class="ui header">Previous Projects Include</h4>
+              <div class="ui small images"><img src="/img/changetip.png" class="ui image"><img src="/img/bitpay.png" class="ui image"><img src="/img/ethereum.png" class="ui image"><img src="/img/streamium.png" class="ui image"><img src="/img/bitcore.png" class="ui image"><img src="/img/blockstream.png" class="ui image"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ui vertical stripe segment">
+        <div class="ui middle stackable grid container">
+          <div class="row">
+            <div class="eight wide column">
+              <h3 id="subscribe" class="ui header">Coming Soon</h3>
+              <p>Fabric is an in-progress, working experiment.  We are aggressively testing our hypothesis and the resulting model, and hope to publish not only a whitepaper, but working source code and a functional network soon.</p>
+              <p>Use the subscription form at the top of this page to subscribe to updates, or the contact form on the right to send us a message.  We will be focusing the majority of our time on building, so we cannot promise a response, but we would love to hear from you.</p>
+            </div>
+            <div class="eight wide column">
+              <h3 id="contact" class="ui header">Contact Us</h3>
+              <p>If you want to help us build the future of the Internet, please do get in touch.  We're excited to include you.
+                <form action="/messages" method="POST" class="ui huge form">
+                  <div class="field required">
+                    <label>Your Email Address</label>
+                    <input type="email" placeholder="you@example.com" name="from" required>
+                  </div>
+                  <div class="field required">
+                    <label>Your Message</label>
+                    <textarea name="message"></textarea>
+                  </div>
+                  <button class="ui huge right floated submit button"><i class="icon mail"></i>Send</button>
+                </form>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ui inverted vertical footer segment">
+        <div class="ui container">
+          <div class="ui stackable inverted divided equal height stackable grid">
+            <div class="three wide column">
+              <h4 class="ui inverted header">About</h4>
+              <div class="ui inverted link list"><a href="/#contact" class="item">Contact Us</a>
+              </div>
+            </div>
+            <div class="three wide column">
+              <h4 class="ui inverted header">Elsewhere</h4>
+              <div class="ui inverted link list"><a href="https://twitter.com/FabricProtocol" rel="me" class="item"><i class="icon twitter"></i> @FabricProtocol</a>
+              </div>
+            </div>
+            <div class="seven wide column">
+              <h4 class="ui inverted header">Copyleft</h4>
+              <p>We don't particularly care for intellectual property, and in fact believe that if you are inspired by what we're working on – by all means, go forth and build.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      //-hljs.initHighlightingOnLoad();
+      smoothScroll.init();
+      $('.tooltipped').popup();
+      
+      $('.message .close').on('click', function() {
+        $(this).closest('.message').transition('fade');
+      });
+      
+      particlesJS('graph-as-background', {
+        'particles': {
+          'number': {
+            'value': 80,
+            'density': {
+              'enable': true,
+              'value_area': 800
+            }
+          },
+          'color': {
+            'value': '#ffffff'
+          },
+          'shape': {
+            'type': 'circle',
+            'stroke': {
+              'width': 0,
+              'color': '#000000'
+            },
+            'polygon': {
+              'nb_sides': 5
+            },
+            'image': {
+              'src': 'img/github.svg',
+              'width': 100,
+              'height': 100
+            }
+          },
+          'opacity': {
+            'value': 0.5,
+            'random': false,
+            'anim': {
+              'enable': false,
+              'speed': 1,
+              'opacity_min': 0.1,
+              'sync': false
+            }
+          },
+          'size': {
+            'value': 3,
+            'random': true,
+            'anim': {
+              'enable': false,
+              'speed': 40,
+              'size_min': 0.1,
+              'sync': false
+            }
+          },
+          'line_linked': {
+            'enable': true,
+            'distance': 150,
+            'color': '#ffffff',
+            'opacity': 0.4,
+            'width': 1
+          },
+          'move': {
+            'enable': true,
+            'speed': 6,
+            'direction': 'none',
+            'random': false,
+            'straight': false,
+            'out_mode': 'out',
+            'bounce': false,
+            'attract': {
+              'enable': false,
+              'rotateX': 600,
+              'rotateY': 1200
+            }
+          }
+        },
+        'interactivity': {
+          'detect_on': 'canvas',
+          'events': {
+            'onhover': {
+              'enable': true,
+              'mode': 'grab'
+            },
+            'onclick': {
+              'enable': true,
+              'mode': 'push'
+            },
+            'resize': true
+          },
+          'modes': {
+            'grab': {
+              'distance': 140,
+              'line_linked': {
+                'opacity': 1
+              }
+            },
+            'bubble': {
+              'distance': 400,
+              'size': 40,
+              'duration': 2,
+              'opacity': 8,
+              'speed': 3
+            },
+            'repulse': {
+              'distance': 200,
+              'duration': 0.4
+            },
+            'push': {
+              'particles_nb': 4
+            },
+            'remove': {
+              'particles_nb': 2
+            }
+          }
+        },
+        'retina_detect': true
+      });
+      
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-66599966-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
